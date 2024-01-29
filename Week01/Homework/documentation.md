@@ -1,0 +1,2 @@
+# My Cookie Recipe Website 
+I copied and pasted the contents of this website: https://sallysbakingaddiction.com/chewy-chocolate-chip-cookies/ to get the recipe, description, etc. I then used HTML components to format this content into an organized recipe. The markdown recipe file is just this content copy and pasted using markdown components to format it. 
