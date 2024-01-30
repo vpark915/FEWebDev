@@ -3,10 +3,60 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>HTML Boilerplate</title>
+        <title>HTML Forms and Inputs</title>
     </head>
     <body>
-        <!-- Everything in body tag shows up in the window -->
-        <h1>HELLO WORLD</h1>
+        <p>Here's a form containing basic input types. For more information see <a href="https://www.w3schools.com/" target="_blank">W3 schools</a></p>
+        <!-- Contains a file to process the form data -->
+        <form action="#" method="POST" name="sampleForm" target="_self">
+            <fieldset>
+                <legend>
+                    Simple Text Input
+                </legend>
+                <p>
+                    The box and title are created by using the fieldset and legend tags
+                </p>
+                <label for="FirstName">First Name</label>
+                <input name="FirstName" type="text"/>
+                <p>This text input has a max character length and placeholder test</p>
+                <label for="LastName">Last Name</label>
+                <input name="LastName" type="text" placeholder="Last Name" maxlength="3" />
+            </fieldset>
+            <fieldset>
+                <legend>Textarea Tag</legend>
+                <label for="WhyIDM">Why did you apply to IDM</label>
+                <textarea name="WhyIDM" cols="10" rows="10"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Check Boxes</legend>
+                <p>Check boxes allow select more than one option at once. All checkboxes in same group have same name but different values</p>
+                <label for="Pet">What pet is your favorite</label>
+                <br/>
+                <input type="checkbox" name="Pet" value="Dog"/>Dog
+            </fieldset>
+            <fieldset>
+                <legend>Radio Buttons</legend>
+                <p>Only allows one option at once</p>
+                <label for="Pet">What pet is your favorite</label>
+                <br/>
+                <input type="radio" name="Pet" value="Dog"/>Dog
+            </fieldset>
+            <fieldset>
+                <legend>Select Options</legend>
+                <p>Using select and option tags add items to a drop down</p>
+                <label for="State">Pick a state</label>
+                <br/>
+                <select name="State">
+                    <option value="NH">New Hampshire</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NH">New Hampshire</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <p>Finally, we use a button to submit our form</p>
+                <input name="Submit" value="Submit" type="button"/>
+            </fieldset>
+        </form>
     </body>
 </html>
