@@ -1,0 +1,2 @@
+# Article Response
+From this article I learned that the job of a UX designer is to address issues, not come up with something that they would just think would look or feel "good". I initially thought that most of the time for a UX designer would be the designing part but actually 90% of the time it's consulting with multiple teams or their audience to have points of reference to design their wireframe off of. 

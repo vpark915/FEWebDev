@@ -1,0 +1,3 @@
+### Creating Markups 
+
+Originally I was confused what the point of semantic elements were because when I tried them out they didn't do anything but after doing a couple more google searches and reading articles I realized it fulfills a easy way to organize your HTML code. Coding the semantic elements was pretty straightforward especially after drawing out my wireframe but it still feels weird seeing everything jumbled on my browser when running the website.
