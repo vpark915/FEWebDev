@@ -1,0 +1,37 @@
+html, body{
+    margin:0;
+}
+div {
+    border:1px solid red;
+    padding:10px; 
+}
+/* ABS positioning doesn't work in relation to other components on webpage */
+.abs-no-parent{
+    background-color:cornflowerblue;
+    position:absolute;
+    top: 20%;
+    right: 100px;
+}
+/* VH stands for percentage of viewport height */
+.rel-parent{
+    background-color:blueviolet;
+    width:50%;
+    height:100vh;
+    /* Whenever you want to psoition something relative even nested components */
+    position:relative;
+}
+.abs-rel-parent{
+    background-color: rgb(12,237,16);
+    width:200px;
+    height:200px;
+    position:absolute;
+    bottom:10px;
+    right:0; 
+}
+header{
+    background-color: darkorange;
+    height: 100px; 
+    width:100%;
+    position:fixed;
+    z-index:100;
+}

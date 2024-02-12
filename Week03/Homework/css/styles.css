@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+html, body{
+    margin:0;
+    background-color:#76ba68;
+}
+nav ul{
+    display:inline-block;
+    margin:0;
+    padding:0 0 0 0;
+    list-style-type: none;
+}
+nav ul li{
+    font:bold 12px/18px;
+    display:inline-block;
+    position:relative;
+    padding:15px 80px;
+    background:#5b9c4e; 
+}
+header{
+    margin: 0;
+    background-color: #458f36;
+    height: 70px; 
+    padding: 10px;
+    width:100%;
+}
+.ingredientName{
+    font-size: 60px;
+    padding: 10px;
+    width:100%;
+    background-color:#458f36;
+    position:relative;
+    display:block;
+}
+.ingredientName .cookiePicture{
+    position:relative;
+    display:block;
+    width: 400px
+}
+.instructions{
+    position:absolute;
+    top: 22%;
+    left: 500px;
+    margin:0px;
+    font-size:50px;
+    background-color:#80ab78;
+    padding:10px;
+}
+.instructions p,ol{
+    margin:0px;
+}
+.instructions main ol li{
+    font-size:40px;
+}
+.ingredients{
+    position:absolute;
+    top: 22%;
+    left: 830px;
+    margin:0px;
+    font-size:50px;
+    padding:10px;
+    background-color:#80ab78
+}
+.ingredients p,ul{
+    margin:0px;
+}
+.ingredients ul li{
+    font-size:40px;
+}

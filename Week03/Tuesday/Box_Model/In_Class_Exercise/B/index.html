@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Navbar</title>
+    <!-- internal style sheet only applies to this page -->
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      header {
+        background-color: darkseagreen;
+      }
+
+      ul{
+        list-style-type: none;
+        overflow:hidden;
+        background-color: cornflowerblue;
+        /* make parent element font size 0 to get rid of tiny annoying space between letters */
+        font-size: 0;
+      }
+
+      li{
+        /* list items display block by default */
+        font-size: 1rem;
+        display: inline-block;
+      }
+      li a{
+        display: block;
+        text-align: center;
+        width: 100px;
+        padding: 10px;
+        /* makes the areas clickabe */
+        text-decoration: none;
+        color:chartreuse;
+      }
+      li a.active{
+        background-color: dodgerblue;
+      }
+      li a:hover{
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a class="active"href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
