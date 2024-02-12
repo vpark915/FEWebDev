@@ -1,0 +1,3 @@
+### Using CSS
+
+At first I didn't really know where to start but then I looked back at the examples from class and took elements from them to understand how to implement it. The navbar was surprisingly the easiest we did that in class but I would say understanding that h1 and other tags like that have certain rules that override everything else. Once I figured that out making all the classes and assigning the right parameters to them was pretty straightforward. 
