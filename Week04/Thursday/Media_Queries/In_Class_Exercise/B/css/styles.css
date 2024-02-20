@@ -1,0 +1,80 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    font-family:Helvetica,Arial, sans-serif;
+}
+img{
+    width:100%;
+    height:auto;
+}
+/* Desktop First Styling */
+header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image:url('../img/grey_wash_wall.png');
+    padding: 0 2rem; 
+    position:relative;
+}
+
+.brand {
+    margin: 0;
+    font-weight:300;
+}
+header a {
+    color:#aaa;
+    text-decoration: none;
+}
+.mobile-menu{
+    display:none;
+}
+.menu {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction: row;
+}
+
+.menu li {
+
+}
+
+.menu li a {
+    display:block;
+    padding: 1rem; 
+}
+
+.menu li a:hover {
+    color:#eee;
+    background-color: rgba(0,0,0,43);
+}
+
+.container{
+
+}
+/* Tablet Size Screen */
+@media screen and (min-width: 768px) and (max-width:1024px){
+    body {
+        background-color:blue; 
+    }
+    header {
+
+    }
+}
+/* Mobile Phone Size Screen */
+@media screen and (max-width:768px){
+    body{
+        background-color:green;
+    }
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items:stretch;
+    }
+}
