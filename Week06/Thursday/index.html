@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Modals</title>
+        <style type="text/css">
+            a.button {
+                text-decoration: none;
+                color: white;
+                background-color: blueviolet;
+                padding: 1rem 2rem; 
+                border-radius: 0.25rem;
+            }
+
+            .info_modal {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.3);
+                z-index:9999;
+                opacity:0; 
+                transition: opacity 400ms ease-in;
+                pointer-events: none;
+            }
+
+            .info_modal:target {
+                opacity: 1; 
+                pointer-events: auto; 
+            }
+
+            .info_modal>div{
+                width: 300px;
+                height: 300px;
+                position: relative;
+                margin: 10% auto;
+                padding: 2rem;
+                background-color: white;
+                border-radius: 10px;
+            }
+
+            .close {
+                height: 20px; 
+                width: 20px;
+                background-color: white;
+                border-top-right-radius: 10px;
+                color: black;
+                position: absolute;
+                top:0;
+                right:0;
+                text-align:center;
+                text-decoration: none;
+                transition: all 1s ease;
+            }
+
+            .close:hover{
+                background-color:black;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <br/>
+        <br/>
+        <a href="#info" class="button">Link to Modal 1</a>
+        <a href="#info2" class="button">Link to Modal 2</a>
+
+        <div id="info" class="info_modal">
+            <!-- child div is modal box itself -->
+            <div>
+                <!-- close button -->
+                <a href="#close" class="close">X</a>
+                <h2>Title of Modal 1</h2>
+                <p>Look at me I am first modal</p>
+            </div>
+        </div>
+
+        <div id="info2" class="info_modal">
+            <!-- child div is modal box itself -->
+            <div>
+                <!-- close button -->
+                <a href="#close" class="close">X</a>
+                <h2>Title of Modal 2</h2>
+                <p>Look at me I am second modal</p>
+            </div>
+        </div>
+    </body>
+</html>

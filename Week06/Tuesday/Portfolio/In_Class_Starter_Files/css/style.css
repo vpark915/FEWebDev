@@ -1,0 +1,102 @@
+/* Global Styles */
+
+/* Take into account borders and padding into our set dimensions of any "box" */
+* {
+    box-sizing: border-box;
+}
+
+/* zero out annoying margin */
+html, body {
+    margin:0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+div.hero {
+    width: 100vw;
+    max-height:100vh;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 50%;
+    padding:2%;
+    background: linear-gradient(
+        90deg,
+        rgba(255,0,0,1) 0%,
+        rgba(255,0,0,0,0) 100%,
+    );
+}
+
+button, a.info {
+    padding: 10px 20px;
+    border: 2px solid black; 
+    border-radius: 10px; 
+    background-color: #333;
+    color: white;
+    text-transform:uppercase;
+    cursor: pointer;
+    text-decoration:none;
+    min-width: 7rem; 
+    max-width: 7rem;
+}
+
+button:hover, a.info:hover {
+    /* In Class Exercise Apply Hover Styles */
+    background-color: #201;
+    color: red; 
+    padding: 20px 40px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumb {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    overflow: hidden;
+    margin: 24px auto; 
+}
+.thumb:hover img{
+    transform: scale(1.5) rotate(-20deg);
+}
+.mask {
+    position: absolute;
+}
+
+.mask h2 {
+    margin: 0;
+}
+
+.mask p {
+    font-style: italic;
+}
+
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width:1024){
+    .hero article {
+        width:75%;
+    }
+    .thumb {
+        flex-basis: 45%;
+    }
+    p {
+        font-size: 30rem;
+    }
+}
