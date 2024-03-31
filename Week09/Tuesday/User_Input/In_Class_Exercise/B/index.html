@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Input Simple</title>
+    <script type="text/javascript">
+      let students = ['Cindy','Katie','Albert','Mike','Lee','David']
+      function listStudents() {
+        let content = document.getElementById('content')
+        let studentList = "asldfjlkasjdflksdjlfsk";
+      }
+      function shuffleStudents(){
+        for (var i = 0; i < students.legnth; i++){
+          let randomIndex = Math.floor(Math.random()*(i+1));
+          let itemAtIndex = students[randomIndex];
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="listStudents()">List Students</button>
+    <button onclick="listStudents()">Sort Students</button>
+    <button>Shuffle Students</button>
+  </body>
+</html>

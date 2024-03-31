@@ -683,18 +683,26 @@ body {
         height: 140px;
         background-image: linear-gradient(#ff967f,#ff785a00);
     }
+    .mobileUI {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
     .mobileUI .searchBar {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
         position:relative;
         top: 140px;
         width: 100%;
-        margin: auto;
         align-items: center;
     }
     
     .mobileUI .searchBar input{
+        position:relative;
+        left: 110px;
         height:30px;
         width:400px;
         border-radius: 10px;
@@ -710,6 +718,8 @@ body {
     }
     .mobileUI .horizontal ul {
         position:relative;
+        display: flex;
+        flex-direction: row;
         top:15px;
         margin: 0;
         padding:0;

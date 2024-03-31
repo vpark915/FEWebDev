@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Input</title>
+    <script type="text/javascript">
+      let myBtn = document.getElementById('changeBtn');
+      function bruh(){
+        console.log("heheheheheh")
+      }
+      myBtn.addEventListener('click',function() {
+        bruh()
+      })
+    </script>
+  </head>
+  <body>
+    <h1 id="changeMe">Get uer input</h1>
+    <form>
+      <fieldset>
+        <legend></legend>
+        <input type="number" name="num" id="num" min="0" max="3" step="1"></input>
+        <button type="button" id="changeBtn" class="btnClass">Click to change</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
