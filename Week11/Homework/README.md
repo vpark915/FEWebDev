@@ -1,0 +1,3 @@
+## DOCUMENTATION 
+
+I made a calculator where you put in your current financial information and it gives you a proposed retirement plan based on the age that you want to retire at. The hardest part was the most tedious part being that I had to fill out different if statements for each tax bracket range. Also the research process required me to do a little work to find out about roth IRAs, 401ks, and what the different income salary tax rates are in 2024. 

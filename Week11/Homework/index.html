@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p class="title">Your Optimized Savings Calculator</p>
+    <div>
+        <form>
+            <h1>How much money do you require to live</h1>
+            <input id="requiredCost" type="number" min="0" max="1000000000" style="width:200px; font-size: 40px;">
+            <h1>How much money do you make a year</h1>
+            <input id="salary" type="number" min="0" max="1000000000" style="width:200px; font-size: 40px;">
+            <h1>How old are you</h1>
+            <input id="age" type="number" min="0" max="1000000000" style="width:200px; font-size: 40px;">
+            <div><input id="submit" type="submit" value="Show me my savings!" style="height:100px; width:500px; font-size: 40px; margin-top:10px"></div>
+        </form>
+    </div>
+    <div>
+        <h1>If you use a 401k you will make:</h1>
+        <p id="401k"></p>
+        <h1>If you use a Roth IRA you will make:</h1>
+        <p id="rothIRA"></p>
+    </div>
+	<script src="index.js"></script>
+  </body>
+</html>
