@@ -16,7 +16,7 @@ const debugEmail = process.env.DEBUG_EMAIL;
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAqykJcKI_EngKmyUvQ7aUthExPoYIDV_M",
+    apiKey: firebaseApiKey,
     authDomain: "final-project-dd4e7.firebaseapp.com",
     projectId: "final-project-dd4e7",
     storageBucket: "final-project-dd4e7.appspot.com",
