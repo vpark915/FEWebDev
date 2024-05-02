@@ -1,0 +1,88 @@
+#creationWindow {
+    height: 540px;  /* or 100vh for full height */
+    width: 100%;    /* Adjust as necessary */
+    border-radius: 10px;
+}
+/* Routes Section */
+#routes {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #191919;
+    width: 100%;
+    top: 150px;
+    align-items: left;
+    font-size: 2.2rem; 
+}
+#routeRankings {
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    width: 98.5%;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #d0573c55;
+    box-shadow: 0px 0px 10px 5px rgba(138, 27, 27, 0.488);
+    margin: auto;
+    font-size: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.route {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    z-index: 0;
+    font-size: 2rem;
+    height: 60px;
+    width: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-image: linear-gradient(#b8472e,#d0573c);
+    align-items: center; 
+}
+
+/* Plans Section */
+.creationOptions {
+    position: relative; 
+    width: 30%; 
+    align-items: center;
+    text-align: left;
+    font-size: 2.2rem;
+}
+.creationOptionsWindow {
+    position:relative;
+    width: 95%;
+    height: 540px;
+    border-radius: 20px;
+    background-color: #d0573c55;
+    box-shadow: 0px 0px 10px 5px rgba(138, 27, 27, 0.488);
+    align-items: center;
+    margin: auto;
+    display: block; 
+    font-size: 2rem;
+}
+.creationOptionsWindow .rankings{
+    width: 100%;
+    position: relative;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.creationOptionsWindow .rankings .item .removeItem{
+    position: absolute;
+    left: 400px;
+    font-size: 1rem;
+    top: 5px;
+    text-decoration: none;
+}
+.creationOptionsWindow .rankings .item .nameItem{
+    position: relative;
+    left: 10px;
+    text-decoration: none;
+}
+#routesTitle{
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+}
