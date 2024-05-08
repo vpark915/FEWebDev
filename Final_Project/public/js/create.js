@@ -11,16 +11,17 @@ let urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('redirectRoute')) {
     let redirectRoute = urlParams.get('redirectRoute');
     currentRoute = redirectRoute;
-    retrieveAllLocations("parkvinnie@gmail.com",currentRoute);
+    retrieveAllLocations(currentEmail,currentRoute);
 } else {
     console.log('No redirectRoute parameter in the URL');
 }
 
 // Client functions  
 function initMap() {
+    // Create new map 
     map = new google.maps.Map(document.getElementById('creationWindow'), {
-        center: { lat: -34.397, lng: 150.644 },  // Coordinates of initial map center
-        zoom: 8                                  // Initial zoom level
+        center: { lat: -34.397, lng: 150.644 }, 
+        zoom: 8                                  
     });
     map.addListener('click', function(mapsMouseEvent) {
         var latLng = mapsMouseEvent.latLng;
@@ -35,7 +36,7 @@ function initMap() {
 
         infoWindow.setPosition(latLng);
         infoWindow.open(map);
-        addLocation(lat,lng,"parkvinnie@gmail.com",currentRoute);
+        addLocation(lat,lng,currentEmail,currentRoute);
     });
 }
 
@@ -84,7 +85,7 @@ function createRouteButton(name){
     newRoute.addEventListener('click', function(){
         currentRoute = newSpan.innerText;
         console.log(currentRoute);
-        retrieveAllLocations("parkvinnie@gmail.com",currentRoute);
+        retrieveAllLocations(currentEmail,currentRoute);
         let rankingsElements = document.getElementsByClassName('rankings');
         for (let i = 0; i < rankingsElements.length; i++) {
             rankingsElements[i].innerHTML = '';
@@ -99,29 +100,27 @@ function createRouteButton(name){
 
     routeRankings.appendChild(newRoute);
 
-    // Event listener for clicking on the span
+    // Add event listeners for route buttons 
     newSpan.addEventListener('click', function() {
         originalRouteName = newSpan.innerText;
-        newInput.style.display = 'block';  // Show input
-        newInput.value = newSpan.innerText;  // Set input value to span's text
-        newSpan.style.display = 'none';       // Hide span
-        newInput.focus();                  // Focus on the input field
+        newInput.style.display = 'block';  
+        newInput.value = newSpan.innerText;  
+        newSpan.style.display = 'none';       
+        newInput.focus();                 
     });
 
-    // Event listener for pressing 'Enter' in the input
     newInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            newSpan.innerText = newInput.value; // Update span text
-            newSpan.style.display = 'block';     // Show span
-            newInput.style.display = 'none';  // Hide input
+            newSpan.innerText = newInput.value; 
+            newSpan.style.display = 'block';     
+            newInput.style.display = 'none';  
             renameRoute(originalRouteName, newInput.value);
         }
     });
 
-    // Optional: Event listener for input losing focus
     newInput.addEventListener('blur', function() {
-        newSpan.style.display = 'block';       // Show span
-        newInput.style.display = 'none';    // Hide input
+        newSpan.style.display = 'block';      
+        newInput.style.display = 'none';    
         renameRoute(originalRouteName, newInput.value);
     });
 }
@@ -140,8 +139,11 @@ function createLocationButton(name){
     removeItem.className = 'removeItem';
     removeItem.textContent = '🗑️';
     removeItem.addEventListener('click', function(){
-        console.log(removeItem.parentNode.firstChild.innerText);
-        deleteLocation(removeItem.parentNode.firstChild.innerText,"parkvinnie@gmail.com");
+        console.log(removeItem);
+        console.log(removeItem.parentNode);
+        console.log(removeItem.parentNode.firstElementChild);
+        console.log(removeItem.parentNode.children[1].innerText);
+        deleteLocation(removeItem.parentNode.children[1].innerText,currentEmail);
         removeItem.parentNode.remove();
     })
 
@@ -157,30 +159,28 @@ function createLocationButton(name){
     var rankings = document.querySelector('.rankings');
     rankings.appendChild(newLocation);
 
-    // Event listener for clicking on the span
+    // Create event listeners
     nameItem.addEventListener('click', function() {
         originalLocationName = nameItem.innerText;
-        input.style.display = 'block';  // Show input
-        input.value = nameItem.innerText;  // Set input value to span's text
-        nameItem.style.display = 'none';       // Hide span
-        input.focus();                  // Focus on the input field
+        input.style.display = 'block'; 
+        input.value = nameItem.innerText;  
+        nameItem.style.display = 'none';     
+        input.focus();              
     });
 
-    // Event listener for pressing 'Enter' in the input
     input.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            nameItem.innerText = input.value; // Update span text
-            nameItem.style.display = 'block';     // Show span
-            input.style.display = 'none';  // Hide input
-            renameLocation(originalLocationName, input.value, "parkvinnie@gmail.com");
+            nameItem.innerText = input.value; 
+            nameItem.style.display = 'block';     
+            input.style.display = 'none';  
+            renameLocation(originalLocationName, input.value, currentEmail);
         }
     });
 
-    // Optional: Event listener for input losing focus
     input.addEventListener('blur', function() {
-        nameItem.style.display = 'block';       // Show span
-        input.style.display = 'none';    // Hide input
-        renameLocation(originalLocationName, input.value, "parkvinnie@gmail.com");
+        nameItem.style.display = 'block';       
+        input.style.display = 'none';   
+        renameLocation(originalLocationName, input.value, currentEmail);
     });
 }
 
@@ -221,7 +221,8 @@ function retrieveRoute(name){
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            name: name
+            name: name,
+            username: currentEmail
         })
     })
     .then(response => response.json())
@@ -235,7 +236,13 @@ function retrieveRoute(name){
 
 function addRoute(){
     fetch('http://localhost:3000/addRoute', {
-        method: 'GET'
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: currentEmail
+        })
     })
     .then(response => response.json())
     .then(data => {
@@ -254,7 +261,8 @@ function renameRoute(originalName, updatedName){
         },
         body: JSON.stringify({
             originalName: originalName,
-            updatedName: updatedName
+            updatedName: updatedName,
+            username: currentEmail
         })
     })
     .then(response => response.json())
@@ -273,7 +281,8 @@ function deleteRoute(name){
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            name:name
+            name:name,
+            username:currentEmail
         })
     })
     .then(response => response.json())

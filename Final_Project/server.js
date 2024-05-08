@@ -38,7 +38,7 @@ app.post('/signup', (req, res) => {
 
 // Route functions 
 app.post('/allRoutes', async (req, res) => {
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         const data = docSnap.data();
@@ -51,7 +51,7 @@ app.post('/allRoutes', async (req, res) => {
 })
 
 app.post('/getRoute', async (req, res) => {
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         const data = docSnap.data();
@@ -69,7 +69,7 @@ app.post('/getRoute', async (req, res) => {
 });
 
 app.post('/renameRoute', async (req, res) => {
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         // retrieve the array of routes and identify index
@@ -98,8 +98,8 @@ app.post('/renameRoute', async (req, res) => {
     }
 })
 
-app.get('/addRoute', async (req, res) => {
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+app.post('/addRoute', async (req, res) => {
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         let initInt = 0; 
@@ -119,7 +119,7 @@ app.get('/addRoute', async (req, res) => {
 });
 
 app.post('/deleteRoute', async (req, res) => {
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         // retrieve the array of routes and identify index
@@ -200,6 +200,7 @@ app.post('/addLocation', async (req, res) => {
         let routeIndex; 
         const data = docSnap.data();
         const array = data.created; 
+        console.log(array);
         for (let i = 0; i < array.length; i++) {
             if (array[i].name === req.body.routeName) { 
                 routeIndex = i; 
@@ -227,12 +228,14 @@ app.post('/addLocation', async (req, res) => {
 app.post('/deleteLocation', async (req, res) => {
     const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
+    console.log(req.body.name);
     if (docSnap.exists()) {
         // retrieve the array of routes and identify index
         const data = docSnap.data();
         const array = data.created; 
         let routeIndex;
         let locationIndex;
+        console.log(req.body.name);
         for (let i = 0; i < array.length; i++) {
             if (array[i].name === req.body.routeName) { 
                 routeIndex = i; 
@@ -276,7 +279,7 @@ app.listen(port, () => {
 });
 
 async function printDebug(){
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         const data = docSnap.data();
@@ -292,7 +295,7 @@ async function printDebug(){
 }
 
 async function checkRedundant(name){
-    const docRef = doc(db, "Final-Project-Users", "parkvinnie@gmail.com");
+    const docRef = doc(db, "Final-Project-Users", req.body.username);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         const data = docSnap.data();
